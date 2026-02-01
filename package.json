@@ -4,7 +4,8 @@
   "description": "Recovered NILOTEGRAM trading platform",
   "scripts": {
     "start": "serve www.legacyhub.site -l 3000",
-    "dev": "serve www.legacyhub.site -l 3000"
+    "dev": "serve www.legacyhub.site -l 3000",
+    "build": "echo 'No build step needed - static files ready' && exit 0"
   },
   "devDependencies": {
     "serve": "^14.2.0"
