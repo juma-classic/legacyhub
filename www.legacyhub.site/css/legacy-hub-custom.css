@@ -17,37 +17,88 @@
     --legacy-sidebar-bg: #ffffff;
 }
 
-/* Force hide original Deriv elements */
+/* AGGRESSIVE OVERRIDE - Force hide original Deriv elements */
 .initial-loader,
 .initial-loader__loading,
 .barspinner,
 .header__menu,
 .header__platform-switcher,
-.header__deriv-logo {
+.header__deriv-logo,
+.app-contents__loading .initial-loader {
     display: none !important;
     visibility: hidden !important;
+    opacity: 0 !important;
 }
 
-/* Header Customization - Match actual Legacy Hub design */
-.header__loading,
-.header {
-    background: var(--legacy-light) !important;
-    border-bottom: 1px solid var(--legacy-border) !important;
-    height: 48px !important;
-    box-shadow: none !important;
-    display: flex !important;
-    align-items: center !important;
-    padding: 0 16px !important;
+/* Force Legacy Hub Header to be visible */
+.legacy-hub-header {
+    background: #ffffff !important;
+    border-bottom: 1px solid #d6dadb !important;
+    height: 60px !important;
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
     right: 0 !important;
-    z-index: 1000 !important;
+    z-index: 10000 !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 0 20px !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
     width: 100% !important;
     box-sizing: border-box !important;
 }
 
-/* Legacy Hub Logo with social icons */
+/* Navigation menu styles - Force visibility */
+.legacy-nav-menu {
+    display: flex !important;
+    align-items: center !important;
+    gap: 30px !important;
+    margin-left: 40px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.legacy-nav-item {
+    color: #333 !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    padding: 8px 16px !important;
+    border-radius: 4px !important;
+    transition: all 0.2s ease !important;
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.legacy-nav-item:hover {
+    background: #f5f5f5 !important;
+    color: #ff6444 !important;
+}
+
+.legacy-nav-item.active {
+    background: #ff6444 !important;
+    color: white !important;
+}
+
+/* Force override original header styles */
+.header__loading,
+.header {
+    background: transparent !important;
+    height: 0 !important;
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* Adjust main content for header */
+.app-contents, 
+.app-contents__loading {
+    margin-top: 60px !important;
+    height: calc(100vh - 97px) !important;
+    padding-top: 0 !important;
+}
+
+/* Header Customization - Match actual Legacy Hub design */
 .header__logo {
     font-weight: bold;
     font-size: 16px;
@@ -386,12 +437,14 @@
         border-top: 1px solid var(--legacy-border);
     }
     
-    .header__menu {
-        display: none;
+    .legacy-nav-menu {
+        gap: 15px !important;
+        margin-left: 20px !important;
     }
     
-    .header__account {
-        gap: 8px;
+    .legacy-nav-item {
+        padding: 6px 12px !important;
+        font-size: 12px !important;
     }
 }
 
