@@ -1,5 +1,5 @@
 /* Legacy Hub Custom Styles */
-/* Override default Deriv styles to match Legacy Hub design */
+/* Match the actual Legacy Hub interface design */
 
 :root {
     --legacy-primary: #ff6444;
@@ -12,24 +12,30 @@
     --legacy-gray: #f2f3f4;
     --legacy-text: #333333;
     --legacy-border: #d6dadb;
+    --legacy-chart-bg: #f8f9fa;
+    --legacy-sidebar-bg: #ffffff;
 }
 
-/* Header Customization */
+/* Header Customization - Match actual Legacy Hub design */
 .header__loading,
 .header {
     background: var(--legacy-light) !important;
     border-bottom: 1px solid var(--legacy-border) !important;
     height: 48px !important;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: none;
+    display: flex !important;
+    align-items: center !important;
+    padding: 0 16px !important;
 }
 
-/* Legacy Hub Logo */
+/* Legacy Hub Logo with social icons */
 .header__logo {
     font-weight: bold;
     font-size: 16px;
     color: var(--legacy-secondary);
     display: flex;
     align-items: center;
+    gap: 16px;
 }
 
 .header__logo::before {
@@ -38,32 +44,43 @@
     font-size: 20px;
 }
 
-/* Navigation Menu */
-.header__menu {
+/* Social media icons */
+.header__social {
     display: flex;
     align-items: center;
-    gap: 24px;
-    margin-left: 32px;
+    gap: 8px;
+    margin-left: 8px;
 }
 
-.header__menu-item {
-    color: var(--legacy-text);
+.header__social-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: white;
     text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 4px;
-    transition: all 0.2s ease;
 }
 
-.header__menu-item:hover {
-    background-color: var(--legacy-gray);
-    color: var(--legacy-primary);
-}
+.header__social-icon.facebook { background: #1877f2; }
+.header__social-icon.twitter { background: #1da1f2; }
+.header__social-icon.telegram { background: #0088cc; }
+.header__social-icon.instagram { background: #e4405f; }
 
-.header__menu-item.active {
-    background-color: var(--legacy-primary);
+/* D-BOT Button */
+.header__dbot-btn {
+    background: var(--legacy-secondary);
     color: var(--legacy-light);
+    border: none;
+    padding: 6px 16px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 16px;
 }
 
 /* Account Section */
@@ -71,7 +88,6 @@
     display: flex;
     align-items: center;
     gap: 16px;
-    margin-left: auto;
 }
 
 .header__balance {
@@ -103,43 +119,49 @@
     transform: translateY(-1px);
 }
 
-/* Trading Interface Layout */
+/* Trading Interface Layout - Match actual design */
 .trading-interface {
     display: flex;
-    height: calc(100vh - 85px); /* Account for header and footer */
+    height: calc(100vh - 85px);
     background: var(--legacy-light);
+    margin-top: 48px;
 }
 
 .trading-chart {
     flex: 1;
-    padding: 16px;
-    background: var(--legacy-light);
+    padding: 0;
+    background: var(--legacy-chart-bg);
+    position: relative;
 }
 
 .trading-sidebar {
-    width: 280px;
-    background: var(--legacy-gray);
+    width: 320px;
+    background: var(--legacy-sidebar-bg);
     border-left: 1px solid var(--legacy-border);
     padding: 16px;
     overflow-y: auto;
 }
 
-/* Chart Container */
+/* Chart Container - Match actual chart area */
 .chart-container {
     height: 100%;
-    background: var(--legacy-light);
-    border: 1px solid var(--legacy-border);
-    border-radius: 8px;
+    background: var(--legacy-chart-bg);
     position: relative;
+    border: none;
 }
 
 .chart-header {
     padding: 12px 16px;
-    border-bottom: 1px solid var(--legacy-border);
+    background: var(--legacy-light);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: var(--legacy-light);
+    border-bottom: 1px solid var(--legacy-border);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
 }
 
 .chart-symbol {
@@ -148,162 +170,180 @@
     font-size: 14px;
 }
 
-.chart-price {
+.chart-symbol .symbol-name {
+    color: #666;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.chart-symbol .symbol-price {
+    font-size: 16px;
     font-weight: 700;
     color: var(--legacy-success);
-    font-size: 16px;
+    margin-top: 2px;
 }
 
-/* Trading Controls */
-.trading-controls {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+/* Chart Canvas Area */
+#trading-chart-canvas {
+    height: calc(100% - 60px);
+    margin-top: 60px;
+    background: var(--legacy-chart-bg);
+    position: relative;
 }
 
-.control-group {
+/* Accumulators Panel - Match actual design */
+.accumulators-panel {
     background: var(--legacy-light);
     border: 1px solid var(--legacy-border);
     border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.accumulators-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--legacy-border);
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--legacy-text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.accumulators-content {
     padding: 16px;
 }
 
-.control-group h3 {
-    margin: 0 0 12px 0;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--legacy-text);
+/* Growth Rate Controls */
+.growth-rate-section {
+    margin-bottom: 20px;
 }
 
-/* Multipliers */
-.multipliers {
+.growth-rate-label {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.growth-rate-buttons {
     display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 12px;
 }
 
-.multiplier-btn {
+.growth-rate-btn {
     flex: 1;
-    min-width: 60px;
-    padding: 8px 12px;
+    padding: 6px 8px;
     border: 1px solid var(--legacy-border);
     background: var(--legacy-light);
     border-radius: 4px;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s ease;
+    text-align: center;
 }
 
-.multiplier-btn:hover {
+.growth-rate-btn:hover {
     border-color: var(--legacy-primary);
-    color: var(--legacy-primary);
 }
 
-.multiplier-btn.active {
+.growth-rate-btn.active {
     background: var(--legacy-primary);
     color: var(--legacy-light);
     border-color: var(--legacy-primary);
 }
 
-/* Scale Controls */
-.scale-controls {
+/* Stake Controls */
+.stake-section {
+    margin-bottom: 20px;
+}
+
+.stake-label {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.stake-input-group {
     display: flex;
     align-items: center;
-    gap: 12px;
-}
-
-.scale-input {
-    flex: 1;
-    padding: 8px 12px;
     border: 1px solid var(--legacy-border);
     border-radius: 4px;
+    overflow: hidden;
+}
+
+.stake-input {
+    flex: 1;
+    padding: 8px 12px;
+    border: none;
     font-size: 14px;
+    outline: none;
 }
 
-.scale-unit {
+.stake-currency {
+    padding: 8px 12px;
+    background: var(--legacy-gray);
     font-size: 12px;
-    color: var(--legacy-text);
-    font-weight: 500;
+    color: #666;
+    border-left: 1px solid var(--legacy-border);
 }
 
-/* Take Profit / Stop Loss */
-.profit-loss-controls {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+/* Take Profit Section */
+.take-profit-section {
+    margin-bottom: 20px;
 }
 
-.control-row {
+.take-profit-toggle {
     display: flex;
     align-items: center;
     gap: 8px;
+    margin-bottom: 12px;
 }
 
-.control-checkbox {
+.take-profit-checkbox {
     width: 16px;
     height: 16px;
 }
 
-.control-label {
+.take-profit-label {
     font-size: 12px;
     color: var(--legacy-text);
     flex: 1;
 }
 
-.control-input {
-    width: 80px;
+.take-profit-inputs {
+    display: flex;
+    gap: 8px;
+}
+
+.take-profit-input {
+    flex: 1;
     padding: 6px 8px;
     border: 1px solid var(--legacy-border);
     border-radius: 4px;
     font-size: 12px;
 }
 
-/* Trading Buttons */
-.trading-buttons {
-    display: flex;
-    gap: 8px;
-    margin-top: 16px;
-}
-
-.trade-btn {
-    flex: 1;
-    padding: 12px 16px;
+/* Buy Button */
+.buy-button {
+    width: 100%;
+    background: var(--legacy-success);
+    color: var(--legacy-light);
     border: none;
+    padding: 12px 16px;
     border-radius: 4px;
     font-weight: 600;
     font-size: 14px;
     cursor: pointer;
     transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
 }
 
-.trade-btn-up {
-    background: var(--legacy-success);
-    color: var(--legacy-light);
-}
-
-.trade-btn-up:hover {
+.buy-button:hover {
     background: #3a9a99;
     transform: translateY(-1px);
-}
-
-.trade-btn-down {
-    background: var(--legacy-danger);
-    color: var(--legacy-light);
-}
-
-.trade-btn-down:hover {
-    background: #d63535;
-    transform: translateY(-1px);
-}
-
-.trade-amount {
-    font-size: 12px;
-    opacity: 0.9;
 }
 
 /* Footer */

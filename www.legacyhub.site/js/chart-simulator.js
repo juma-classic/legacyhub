@@ -1,5 +1,5 @@
-// Simple Chart Simulator for Legacy Hub
-// Creates a basic candlestick-like visualization
+// Volatility 100 (1s) Index Chart Simulator for Legacy Hub
+// Creates a realistic line chart with filled area matching the actual interface
 
 class ChartSimulator {
     constructor(containerId) {
@@ -7,8 +7,10 @@ class ChartSimulator {
         this.canvas = null;
         this.ctx = null;
         this.data = [];
-        this.currentPrice = 469.00;
+        this.currentPrice = 1695.39; // Match actual Volatility 100 price
         this.isRunning = false;
+        this.chartColor = '#85ACB0'; // Match actual chart color
+        this.fillColor = 'rgba(133, 172, 176, 0.1)'; // Light fill under line
         
         this.init();
     }
@@ -22,6 +24,7 @@ class ChartSimulator {
         this.canvas.height = this.container.clientHeight;
         this.canvas.style.width = '100%';
         this.canvas.style.height = '100%';
+        this.canvas.style.background = '#f8f9fa';
         
         this.ctx = this.canvas.getContext('2d');
         
@@ -29,7 +32,7 @@ class ChartSimulator {
         this.container.innerHTML = '';
         this.container.appendChild(this.canvas);
         
-        // Generate initial data
+        // Generate initial data with downward trend
         this.generateInitialData();
         
         // Start simulation
@@ -40,13 +43,17 @@ class ChartSimulator {
     }
     
     generateInitialData() {
-        const points = 100;
-        let price = this.currentPrice;
+        const points = 120;
+        let price = 1696.50; // Start slightly higher for downward trend
         
         for (let i = 0; i < points; i++) {
-            const change = (Math.random() - 0.5) * 10;
+            // Create downward trend with volatility
+            const trendFactor = -0.02; // Slight downward trend
+            const volatility = (Math.random() - 0.5) * 3; // Reduced volatility for realism
+            const change = trendFactor + volatility;
+            
             price += change;
-            price = Math.max(400, Math.min(600, price)); // Keep within bounds
+            price = Math.max(1690, Math.min(1700, price)); // Realistic Volatility 100 range
             
             this.data.push({
                 price: price,
@@ -56,12 +63,17 @@ class ChartSimulator {
         }
         
         this.currentPrice = price;
+        this.updatePriceDisplay();
     }
     
     addDataPoint() {
-        const change = (Math.random() - 0.5) * 8;
+        // Create realistic Volatility 100 price movement with slight downward bias
+        const trendFactor = -0.01; // Slight downward trend
+        const volatility = (Math.random() - 0.5) * 2.5; // Realistic volatility
+        const change = trendFactor + volatility;
+        
         this.currentPrice += change;
-        this.currentPrice = Math.max(400, Math.min(600, this.currentPrice));
+        this.currentPrice = Math.max(1690, Math.min(1700, this.currentPrice)); // Realistic bounds
         
         this.data.push({
             price: this.currentPrice,
@@ -69,8 +81,8 @@ class ChartSimulator {
             volume: Math.random() * 100
         });
         
-        // Keep only last 100 points
-        if (this.data.length > 100) {
+        // Keep only last 120 points for smooth scrolling
+        if (this.data.length > 120) {
             this.data.shift();
         }
         
@@ -79,7 +91,7 @@ class ChartSimulator {
     }
     
     updatePriceDisplay() {
-        const priceElement = document.querySelector('.chart-price');
+        const priceElement = document.querySelector('.symbol-price');
         if (priceElement) {
             const isUp = this.data.length > 1 && 
                         this.currentPrice > this.data[this.data.length - 2].price;
@@ -98,8 +110,8 @@ class ChartSimulator {
         // Clear canvas
         this.ctx.clearRect(0, 0, width, height);
         
-        // Set up drawing context
-        this.ctx.strokeStyle = '#4bb4b3';
+        // Set up drawing context with Legacy Hub colors
+        this.ctx.strokeStyle = this.chartColor; // Use #85ACB0 color
         this.ctx.lineWidth = 2;
         this.ctx.lineCap = 'round';
         this.ctx.lineJoin = 'round';
@@ -113,10 +125,34 @@ class ChartSimulator {
         const chartWidth = width - padding * 2;
         const chartHeight = height - padding * 2;
         
-        // Draw grid lines
+        // Draw grid lines (subtle)
         this.drawGrid(padding, chartWidth, chartHeight, minPrice, maxPrice);
         
-        // Draw price line
+        // Draw filled area under the line
+        this.ctx.fillStyle = this.fillColor;
+        this.ctx.beginPath();
+        this.data.forEach((point, index) => {
+            const x = padding + (index / (this.data.length - 1)) * chartWidth;
+            const y = padding + (1 - (point.price - minPrice) / priceRange) * chartHeight;
+            
+            if (index === 0) {
+                this.ctx.moveTo(x, y);
+            } else {
+                this.ctx.lineTo(x, y);
+            }
+        });
+        // Close the path to the bottom
+        if (this.data.length > 0) {
+            const lastX = padding + chartWidth;
+            const firstX = padding;
+            this.ctx.lineTo(lastX, padding + chartHeight);
+            this.ctx.lineTo(firstX, padding + chartHeight);
+            this.ctx.closePath();
+        }
+        this.ctx.fill();
+        
+        // Draw price line on top
+        this.ctx.strokeStyle = this.chartColor;
         this.ctx.beginPath();
         this.data.forEach((point, index) => {
             const x = padding + (index / (this.data.length - 1)) * chartWidth;
@@ -136,19 +172,19 @@ class ChartSimulator {
             const x = padding + chartWidth;
             const y = padding + (1 - (lastPoint.price - minPrice) / priceRange) * chartHeight;
             
-            this.ctx.fillStyle = '#4bb4b3';
+            this.ctx.fillStyle = this.chartColor;
             this.ctx.beginPath();
-            this.ctx.arc(x - chartWidth / (this.data.length - 1), y, 4, 0, Math.PI * 2);
+            this.ctx.arc(x - chartWidth / (this.data.length - 1), y, 3, 0, Math.PI * 2);
             this.ctx.fill();
         }
     }
     
     drawGrid(padding, chartWidth, chartHeight, minPrice, maxPrice) {
-        this.ctx.strokeStyle = '#e0e0e0';
+        this.ctx.strokeStyle = 'rgba(0, 0, 0, 0.05)'; // Very subtle grid
         this.ctx.lineWidth = 1;
         
-        // Horizontal grid lines (price levels)
-        const priceSteps = 5;
+        // Horizontal grid lines (price levels) - fewer lines
+        const priceSteps = 3;
         for (let i = 0; i <= priceSteps; i++) {
             const y = padding + (i / priceSteps) * chartHeight;
             const price = maxPrice - (i / priceSteps) * (maxPrice - minPrice);
@@ -158,16 +194,16 @@ class ChartSimulator {
             this.ctx.lineTo(padding + chartWidth, y);
             this.ctx.stroke();
             
-            // Price labels
-            this.ctx.fillStyle = '#666';
-            this.ctx.font = '10px Arial';
+            // Price labels (smaller and subtle)
+            this.ctx.fillStyle = '#999';
+            this.ctx.font = '9px Arial';
             this.ctx.textAlign = 'right';
-            this.ctx.fillText(price.toFixed(2), padding - 5, y + 3);
+            this.ctx.fillText(price.toFixed(2), padding - 8, y + 3);
         }
         
-        // Vertical grid lines (time)
-        const timeSteps = 5;
-        for (let i = 0; i <= timeSteps; i++) {
+        // Vertical grid lines (time) - fewer lines
+        const timeSteps = 4;
+        for (let i = 1; i < timeSteps; i++) {
             const x = padding + (i / timeSteps) * chartWidth;
             
             this.ctx.beginPath();
@@ -202,8 +238,8 @@ class ChartSimulator {
         this.addDataPoint();
         this.draw();
         
-        // Update every 1-3 seconds
-        const delay = 1000 + Math.random() * 2000;
+        // Update every 1-2 seconds for realistic Volatility 100 movement
+        const delay = 1000 + Math.random() * 1000;
         setTimeout(() => this.animate(), delay);
     }
 }

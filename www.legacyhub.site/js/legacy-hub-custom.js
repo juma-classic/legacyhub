@@ -1,15 +1,14 @@
 // Legacy Hub Custom JavaScript
-// Trading interface functionality and UI enhancements
+// Match the actual Legacy Hub trading interface
 
 class LegacyHubTrader {
     constructor() {
         this.currentBalance = 10013.23;
-        this.selectedMultiplier = 10;
+        this.selectedGrowthRate = '3%';
         this.stakeAmount = 10.00;
         this.takeProfitEnabled = false;
-        this.stopLossEnabled = false;
         this.takeProfitAmount = 0;
-        this.stopLossAmount = 0;
+        this.maxPayout = 0;
         
         this.init();
     }
@@ -26,25 +25,20 @@ class LegacyHubTrader {
         if (!header) return;
         
         header.innerHTML = `
-            <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 0 16px; height: 48px;">
-                <div style="display: flex; align-items: center;">
-                    <div class="header__logo">
-                        LEGACY HUB
-                    </div>
-                    <nav class="header__menu">
-                        <a href="#" class="header__menu-item">D-BOT</a>
-                        <a href="#" class="header__menu-item">Reports</a>
-                        <a href="#" class="header__menu-item">Cashier</a>
-                    </nav>
+            <div class="header__logo">
+                LEGACY HUB
+                <div class="header__social">
+                    <a href="#" class="header__social-icon facebook">f</a>
+                    <a href="#" class="header__social-icon twitter">t</a>
+                    <a href="#" class="header__social-icon telegram">T</a>
+                    <a href="#" class="header__social-icon instagram">i</a>
                 </div>
-                <div class="header__account">
-                    <div class="header__balance">
-                        <span>💰</span>
-                        <span class="header__balance-amount" id="balance-display">$${this.currentBalance.toLocaleString('en-US', {minimumFractionDigits: 2})} USD</span>
-                    </div>
-                    <button class="header__deposit-btn" onclick="legacyTrader.deposit()">
-                        Deposit
-                    </button>
+            </div>
+            <button class="header__dbot-btn">D-BOT</button>
+            <div class="header__account">
+                <div style="display: flex; gap: 8px;">
+                    <button style="background: none; border: 1px solid #ccc; padding: 4px 12px; border-radius: 4px; font-size: 12px;">Log in</button>
+                    <button style="background: #ff6444; color: white; border: none; padding: 4px 12px; border-radius: 4px; font-size: 12px;">Sign up</button>
                 </div>
             </div>
         `;
@@ -60,78 +54,59 @@ class LegacyHubTrader {
                     <div class="chart-container">
                         <div class="chart-header">
                             <div class="chart-symbol">
-                                <span style="color: #666; font-size: 12px;">VOLATILITY 100 (1s) INDEX</span>
-                                <div style="font-size: 16px; font-weight: 700; color: #4bb4b3;">$469.00</div>
+                                <div class="symbol-name">Volatility 100 (1s) Index</div>
+                                <div class="symbol-price">1695.39 <span style="color: #ec3f3f; font-size: 12px;">▼ -0.56 (-0.03%)</span></div>
                             </div>
                             <div style="font-size: 12px; color: #666;">
                                 Last updated: ${new Date().toLocaleTimeString()}
                             </div>
                         </div>
-                        <div id="trading-chart-canvas" style="height: calc(100% - 60px); background: #f8f9fa; position: relative;">
-                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #666; z-index: 1;">
-                                <div style="font-size: 48px; margin-bottom: 16px;">📈</div>
-                                <div>Loading Chart...</div>
-                                <div style="font-size: 12px; margin-top: 8px;">Volatility 100 (1s) Index</div>
-                            </div>
-                        </div>
+                        <div id="trading-chart-canvas"></div>
                     </div>
                 </div>
                 <div class="trading-sidebar">
-                    <div class="trading-controls">
-                        <!-- Multipliers -->
-                        <div class="control-group">
-                            <h3>🔢 Multipliers</h3>
-                            <div class="multipliers">
-                                <button class="multiplier-btn" data-multiplier="5">x5</button>
-                                <button class="multiplier-btn active" data-multiplier="10">x10</button>
-                                <button class="multiplier-btn" data-multiplier="25">x25</button>
-                                <button class="multiplier-btn" data-multiplier="50">x50</button>
-                                <button class="multiplier-btn" data-multiplier="100">x100</button>
-                                <button class="multiplier-btn" data-multiplier="250">x250</button>
-                            </div>
+                    <!-- Accumulators Panel -->
+                    <div class="accumulators-panel">
+                        <div class="accumulators-header">
+                            📊 Accumulators
                         </div>
-                        
-                        <!-- Scale -->
-                        <div class="control-group">
-                            <h3>⚖️ Stake</h3>
-                            <div class="scale-controls">
-                                <input type="number" class="scale-input" id="stake-input" value="${this.stakeAmount}" min="1" step="0.01">
-                                <span class="scale-unit">USD</span>
-                            </div>
-                        </div>
-                        
-                        <!-- Take Profit / Stop Loss -->
-                        <div class="control-group">
-                            <h3>🎯 Risk Management</h3>
-                            <div class="profit-loss-controls">
-                                <div class="control-row">
-                                    <input type="checkbox" class="control-checkbox" id="take-profit-check">
-                                    <label class="control-label" for="take-profit-check">Take profit</label>
-                                    <input type="number" class="control-input" id="take-profit-input" placeholder="0.00" disabled>
-                                </div>
-                                <div class="control-row">
-                                    <input type="checkbox" class="control-checkbox" id="stop-loss-check">
-                                    <label class="control-label" for="stop-loss-check">Stop loss</label>
-                                    <input type="number" class="control-input" id="stop-loss-input" placeholder="0.00" disabled>
+                        <div class="accumulators-content">
+                            <!-- Growth Rate -->
+                            <div class="growth-rate-section">
+                                <label class="growth-rate-label">Growth rate</label>
+                                <div class="growth-rate-buttons">
+                                    <button class="growth-rate-btn" data-rate="1%">1%</button>
+                                    <button class="growth-rate-btn" data-rate="2%">2%</button>
+                                    <button class="growth-rate-btn active" data-rate="3%">3%</button>
+                                    <button class="growth-rate-btn" data-rate="4%">4%</button>
+                                    <button class="growth-rate-btn" data-rate="5%">5%</button>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <!-- Trading Buttons -->
-                        <div class="trading-buttons">
-                            <button class="trade-btn trade-btn-up" onclick="legacyTrader.trade('up')">
-                                <span>📈</span>
-                                <div>
-                                    <div>Up</div>
-                                    <div class="trade-amount">$${this.stakeAmount.toFixed(2)} USD</div>
+                            
+                            <!-- Stake -->
+                            <div class="stake-section">
+                                <label class="stake-label">Stake</label>
+                                <div class="stake-input-group">
+                                    <input type="number" class="stake-input" id="stake-input" value="${this.stakeAmount}" min="1" step="0.01">
+                                    <span class="stake-currency">USD</span>
                                 </div>
-                            </button>
-                            <button class="trade-btn trade-btn-down" onclick="legacyTrader.trade('down')">
-                                <span>📉</span>
-                                <div>
-                                    <div>Down</div>
-                                    <div class="trade-amount">$${this.stakeAmount.toFixed(2)} USD</div>
+                            </div>
+                            
+                            <!-- Take Profit -->
+                            <div class="take-profit-section">
+                                <div class="take-profit-toggle">
+                                    <input type="checkbox" class="take-profit-checkbox" id="take-profit-check">
+                                    <label class="take-profit-label" for="take-profit-check">Take profit</label>
                                 </div>
+                                <div class="take-profit-inputs">
+                                    <input type="number" class="take-profit-input" id="max-payout-input" placeholder="Max. payout" disabled>
+                                    <input type="number" class="take-profit-input" id="take-profit-input" placeholder="Take profit" disabled>
+                                </div>
+                            </div>
+                            
+                            <!-- Buy Button -->
+                            <button class="buy-button" onclick="legacyTrader.trade()">
+                                Buy
                             </button>
                         </div>
                     </div>
@@ -141,12 +116,12 @@ class LegacyHubTrader {
     }
     
     bindEvents() {
-        // Multiplier selection
+        // Growth rate selection
         document.addEventListener('click', (e) => {
-            if (e.target.classList.contains('multiplier-btn')) {
-                document.querySelectorAll('.multiplier-btn').forEach(btn => btn.classList.remove('active'));
+            if (e.target.classList.contains('growth-rate-btn')) {
+                document.querySelectorAll('.growth-rate-btn').forEach(btn => btn.classList.remove('active'));
                 e.target.classList.add('active');
-                this.selectedMultiplier = parseInt(e.target.dataset.multiplier);
+                this.selectedGrowthRate = e.target.dataset.rate;
             }
         });
         
@@ -155,56 +130,43 @@ class LegacyHubTrader {
         if (stakeInput) {
             stakeInput.addEventListener('input', (e) => {
                 this.stakeAmount = parseFloat(e.target.value) || 0;
-                this.updateTradeButtons();
             });
         }
         
         // Take profit checkbox
         const takeProfitCheck = document.getElementById('take-profit-check');
+        const maxPayoutInput = document.getElementById('max-payout-input');
         const takeProfitInput = document.getElementById('take-profit-input');
-        if (takeProfitCheck && takeProfitInput) {
+        
+        if (takeProfitCheck && maxPayoutInput && takeProfitInput) {
             takeProfitCheck.addEventListener('change', (e) => {
                 this.takeProfitEnabled = e.target.checked;
+                maxPayoutInput.disabled = !e.target.checked;
                 takeProfitInput.disabled = !e.target.checked;
-                if (!e.target.checked) takeProfitInput.value = '';
+                if (!e.target.checked) {
+                    maxPayoutInput.value = '';
+                    takeProfitInput.value = '';
+                }
+            });
+            
+            maxPayoutInput.addEventListener('input', (e) => {
+                this.maxPayout = parseFloat(e.target.value) || 0;
             });
             
             takeProfitInput.addEventListener('input', (e) => {
                 this.takeProfitAmount = parseFloat(e.target.value) || 0;
             });
         }
-        
-        // Stop loss checkbox
-        const stopLossCheck = document.getElementById('stop-loss-check');
-        const stopLossInput = document.getElementById('stop-loss-input');
-        if (stopLossCheck && stopLossInput) {
-            stopLossCheck.addEventListener('change', (e) => {
-                this.stopLossEnabled = e.target.checked;
-                stopLossInput.disabled = !e.target.checked;
-                if (!e.target.checked) stopLossInput.value = '';
-            });
-            
-            stopLossInput.addEventListener('input', (e) => {
-                this.stopLossAmount = parseFloat(e.target.value) || 0;
-            });
-        }
-    }
-    
-    updateTradeButtons() {
-        const tradeAmounts = document.querySelectorAll('.trade-amount');
-        tradeAmounts.forEach(amount => {
-            amount.textContent = `$${this.stakeAmount.toFixed(2)} USD`;
-        });
     }
     
     updateBalance() {
         const balanceDisplay = document.getElementById('balance-display');
         if (balanceDisplay) {
-            balanceDisplay.textContent = `$${this.currentBalance.toLocaleString('en-US', {minimumFractionDigits: 2})} USD`;
+            balanceDisplay.textContent = `${this.currentBalance.toLocaleString('en-US', {minimumFractionDigits: 2})} USD`;
         }
     }
     
-    trade(direction) {
+    trade() {
         if (this.stakeAmount <= 0) {
             alert('Please enter a valid stake amount');
             return;
@@ -215,32 +177,24 @@ class LegacyHubTrader {
             return;
         }
         
-        // Simulate trade
-        const isWin = Math.random() > 0.5;
-        const payout = this.stakeAmount * this.selectedMultiplier;
+        // Simulate accumulator trade
+        const growthRateValue = parseFloat(this.selectedGrowthRate.replace('%', '')) / 100;
+        const isWin = Math.random() > 0.3; // 70% win rate for demo
         
         if (isWin) {
-            this.currentBalance += payout - this.stakeAmount;
-            this.showNotification(`Trade Won! +$${(payout - this.stakeAmount).toFixed(2)}`, 'success');
+            const profit = this.stakeAmount * (1 + growthRateValue) - this.stakeAmount;
+            this.currentBalance += profit;
+            this.showNotification(`Trade Won! +${profit.toFixed(2)}`, 'success');
         } else {
             this.currentBalance -= this.stakeAmount;
-            this.showNotification(`Trade Lost! -$${this.stakeAmount.toFixed(2)}`, 'error');
+            this.showNotification(`Trade Lost! -${this.stakeAmount.toFixed(2)}`, 'error');
         }
         
         this.updateBalance();
         
-        console.log(`Trade ${direction.toUpperCase()}: ${isWin ? 'WIN' : 'LOSS'}`);
-        console.log(`Stake: $${this.stakeAmount}, Multiplier: x${this.selectedMultiplier}`);
-        console.log(`New Balance: $${this.currentBalance.toFixed(2)}`);
-    }
-    
-    deposit() {
-        const amount = prompt('Enter deposit amount:');
-        if (amount && !isNaN(amount) && parseFloat(amount) > 0) {
-            this.currentBalance += parseFloat(amount);
-            this.updateBalance();
-            this.showNotification(`Deposited $${parseFloat(amount).toFixed(2)}`, 'success');
-        }
+        console.log(`Accumulator Trade: ${isWin ? 'WIN' : 'LOSS'}`);
+        console.log(`Stake: ${this.stakeAmount}, Growth Rate: ${this.selectedGrowthRate}`);
+        console.log(`New Balance: ${this.currentBalance.toFixed(2)}`);
     }
     
     showNotification(message, type = 'info') {
