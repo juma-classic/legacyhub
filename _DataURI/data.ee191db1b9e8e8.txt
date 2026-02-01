@@ -1,0 +1,1 @@
+webpack-internal:///pages/payment-agent/payment-agent-side-note/payment-agent-disclaimer/index.ts

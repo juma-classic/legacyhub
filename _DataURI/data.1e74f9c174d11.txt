@@ -1,0 +1,1 @@
+webpack-internal:///components/src/components/wallet-icon/wallet-icon.scss

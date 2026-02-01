@@ -1,0 +1,1 @@
+webpack-internal:///src/components/journal/journal-components/journal-item.tsx

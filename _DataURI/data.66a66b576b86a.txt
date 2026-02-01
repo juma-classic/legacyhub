@@ -1,0 +1,1 @@
+webpack-internal:///App/Components/Layout/Footer/toggle-language-settings.tsx

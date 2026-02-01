@@ -1,0 +1,1 @@
+webpack-internal:///components/src/components/horizontal-swipe/horizontal-swipe.tsx

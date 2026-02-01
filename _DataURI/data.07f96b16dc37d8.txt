@@ -1,0 +1,1 @@
+webpack-internal:///components/side-notes/side-note-faq/side-note-faq.scss

@@ -1,0 +1,12 @@
+{
+  "name": "nilotegram-recovered",
+  "version": "1.0.0",
+  "description": "Recovered NILOTEGRAM trading platform",
+  "scripts": {
+    "start": "serve www.legacyhub.site -l 3000",
+    "dev": "serve www.legacyhub.site -l 3000"
+  },
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}

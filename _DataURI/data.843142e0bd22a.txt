@@ -1,0 +1,1 @@
+webpack-internal:///App/Containers/Modals/ready-to-deposit-modal/ready-to-deposit-modal.scss

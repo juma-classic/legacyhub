@@ -1,0 +1,1 @@
+webpack-internal:///node_modules/@deriv-com/auth-client/dist/hooks/useOAuth2.js

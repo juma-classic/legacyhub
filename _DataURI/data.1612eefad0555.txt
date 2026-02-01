@@ -1,0 +1,1 @@
+webpack-internal:///Components/trading-assessment/risk-tolerance-warning-modal.tsx

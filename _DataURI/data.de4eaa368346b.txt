@@ -1,0 +1,1 @@
+webpack-internal:///bot-skeleton/src/scratch/hooks/workspace_svg.js

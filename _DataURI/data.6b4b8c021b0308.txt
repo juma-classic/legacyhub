@@ -1,0 +1,1 @@
+webpack-internal:///components/src/components/news-ticker/news-ticker.tsx

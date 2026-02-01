@@ -1,0 +1,1 @@
+webpack-internal:///pages/payment-agent/payment-agent-list/payment-agent-list.tsx

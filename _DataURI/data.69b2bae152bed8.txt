@@ -1,0 +1,1 @@
+webpack-internal:///src/App/Components/Elements/Modals/AccountVerificationPendingModal/account-verification-pending-modal.tsx

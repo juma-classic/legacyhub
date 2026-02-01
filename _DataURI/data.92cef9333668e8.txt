@@ -1,0 +1,1 @@
+webpack-internal:///node_modules/use-sync-external-store/shim/index.js

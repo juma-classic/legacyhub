@@ -1,0 +1,1 @@
+webpack-internal:///node_modules/@deriv-com/utils/dist/deriv-utils.umd.cjs

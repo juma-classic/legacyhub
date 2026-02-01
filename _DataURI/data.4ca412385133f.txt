@@ -1,0 +1,1 @@
+webpack-internal:///Components/trading-assessment/test-warning-modal.tsx

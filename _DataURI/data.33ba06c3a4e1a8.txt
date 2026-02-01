@@ -1,0 +1,1 @@
+webpack-internal:///account/src/Components/currency-selector/currency-selector.tsx

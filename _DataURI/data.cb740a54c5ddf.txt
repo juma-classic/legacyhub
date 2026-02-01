@@ -1,0 +1,1 @@
+webpack-internal:///node_modules/@deriv/quill-icons/dist/esm/react/Flags/FlagChinaSimplifiedIcon.js

@@ -1,0 +1,1 @@
+webpack-internal:///src/components/transaction-details/transaction-details-desktop.tsx

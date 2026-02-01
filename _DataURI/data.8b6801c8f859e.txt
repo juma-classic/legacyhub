@@ -1,0 +1,1 @@
+webpack-internal:///modules/deposit-crypto/components/deposit-crypto-info-notice/deposit-crypto-info-notice.tsx

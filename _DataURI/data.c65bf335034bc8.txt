@@ -1,0 +1,1 @@
+webpack-internal:///bot-skeleton/src/services/api/contracts-for.js

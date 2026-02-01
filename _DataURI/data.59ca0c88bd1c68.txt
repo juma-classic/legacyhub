@@ -1,0 +1,1 @@
+webpack-internal:///node_modules/framesync/dist/es/on-next-frame.mjs

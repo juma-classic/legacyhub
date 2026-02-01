@@ -1,0 +1,1 @@
+webpack-internal:///node_modules/embla-carousel-react/embla-carousel-react.esm.js

@@ -1,0 +1,1 @@
+webpack-internal:///p2p/dist/p2p/js/index.js

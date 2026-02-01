@@ -1,0 +1,1 @@
+webpack-internal:///Assets/SvgComponents/footer/ic-footer-dark-theme.svg

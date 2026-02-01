@@ -1,0 +1,1 @@
+webpack-internal:///pages/payment-agent/payment-agent-deposit-details/payment-agent-deposit-details.tsx

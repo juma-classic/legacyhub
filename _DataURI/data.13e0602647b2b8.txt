@@ -1,0 +1,1 @@
+webpack-internal:///node_modules/@deriv-com/translations/dist/i18nInstance-D20fwFYr.js

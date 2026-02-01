@@ -1,0 +1,1181 @@
+.CopyTradingPage-module-scss-module__IUkHUG__container {
+    max-width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: .25rem;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+    font-size: 13px;
+    transition: all .3s
+}
+
+@media (min-width:375px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__container {
+        padding: .5rem;
+        font-size: 14px
+    }
+}
+
+@media (min-width:640px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__container {
+        padding: .75rem;
+        font-size: 15px
+    }
+}
+
+@media (min-width:1024px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__container {
+        max-width: 1400px;
+        padding: 1rem 1.5rem;
+        font-size: 16px
+    }
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__dark {
+    color: #f8fafc;
+    background: radial-gradient(circle at top, #0f172a, #020617)
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__light {
+    color: #1e293b;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__topBar {
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    display: flex
+}
+
+@media (min-width:640px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__topBar {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem
+    }
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__topBar h1 {
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    -webkit-text-fill-color: #0000;
+    -webkit-background-clip: text;
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700
+}
+
+@media (min-width:640px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__topBar h1 {
+        font-size: 1.5rem
+    }
+}
+
+@media (min-width:1024px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__topBar h1 {
+        font-size: 1.75rem
+    }
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__themeToggle {
+    color: inherit;
+    cursor: pointer;
+    background: #ffffff14;
+    border: 1px solid #ffffff26;
+    border-radius: 8px;
+    align-items: center;
+    gap: .5rem;
+    padding: .6rem 1rem;
+    font-size: .9rem;
+    font-weight: 500;
+    transition: all .3s;
+    display: flex
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__themeToggle:hover {
+    background: #ffffff1f;
+    transform: translateY(-1px)
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__light .CopyTradingPage-module-scss-module__IUkHUG__themeToggle {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 4px #0000001a
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__controls {
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    display: flex
+}
+
+@media (min-width:640px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__controls {
+        flex-flow: wrap;
+        justify-content: space-between;
+        align-items: center
+    }
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__controls .CopyTradingPage-module-scss-module__IUkHUG__dropdown {
+    color: inherit;
+    background: #ffffff14;
+    border: 1px solid #ffffff26;
+    border-radius: 8px;
+    padding: .6rem 1rem;
+    font-size: .9rem
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__light .CopyTradingPage-module-scss-module__IUkHUG__controls .CopyTradingPage-module-scss-module__IUkHUG__dropdown {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 4px #0000001a
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__controls .CopyTradingPage-module-scss-module__IUkHUG__overDigitSelector {
+    background: #ffffff14;
+    border: 1px solid #ffffff26;
+    border-radius: 8px;
+    flex-direction: column;
+    gap: .5rem;
+    padding: .8rem 1rem;
+    font-size: .9rem;
+    display: flex
+}
+
+@media (min-width:640px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__controls .CopyTradingPage-module-scss-module__IUkHUG__overDigitSelector {
+        flex-direction: row;
+        align-items: center;
+        padding: .6rem 1rem
+    }
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__light .CopyTradingPage-module-scss-module__IUkHUG__controls .CopyTradingPage-module-scss-module__IUkHUG__overDigitSelector {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 4px #0000001a
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__controls .CopyTradingPage-module-scss-module__IUkHUG__overDigitSelector .CopyTradingPage-module-scss-module__IUkHUG__digitInput {
+    width: 50px;
+    color: inherit;
+    text-align: center;
+    background: #ffffff1a;
+    border: 1px solid #fff3;
+    border-radius: 4px;
+    padding: .3rem .5rem
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__light .CopyTradingPage-module-scss-module__IUkHUG__controls .CopyTradingPage-module-scss-module__IUkHUG__overDigitSelector .CopyTradingPage-module-scss-module__IUkHUG__digitInput {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__live {
+    text-align: center;
+    background: #ffffff0d;
+    border: 1px solid #ffffff1a;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    padding: .75rem
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__light .CopyTradingPage-module-scss-module__IUkHUG__live {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 4px #0000001a
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__live h2 .CopyTradingPage-module-scss-module__IUkHUG__recharts-wrapper {
+    width: 100% !important;
+    height: 160px !important
+}
+
+@media (min-width:375px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__live h2 .CopyTradingPage-module-scss-module__IUkHUG__recharts-wrapper {
+        height: 180px !important
+    }
+}
+
+@media (min-width:640px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__live h2 .CopyTradingPage-module-scss-module__IUkHUG__recharts-wrapper {
+        height: 220px !important
+    }
+}
+
+@media (min-width:768px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__live h2 .CopyTradingPage-module-scss-module__IUkHUG__recharts-wrapper {
+        height: 250px !important
+    }
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__live h2 .CopyTradingPage-module-scss-module__IUkHUG__recharts-wrapper .CopyTradingPage-module-scss-module__IUkHUG__recharts-cartesian-axis-tick {
+    font-size: .7rem
+}
+
+@media (min-width:640px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__live h2 .CopyTradingPage-module-scss-module__IUkHUG__recharts-wrapper .CopyTradingPage-module-scss-module__IUkHUG__recharts-cartesian-axis-tick {
+        font-size: .8rem
+    }
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__live h2 {
+    margin: 0 0 .25rem;
+    font-size: 1rem
+}
+
+@media (min-width:640px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__live h2 {
+        font-size: 1.1rem
+    }
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__live p {
+    color: #06b6d4;
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700
+}
+
+@media (min-width:640px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__live p {
+        font-size: 1.5rem
+    }
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__charts {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+    display: grid
+}
+
+@media (min-width:768px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__charts {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem
+    }
+}
+
+@media (min-width:1024px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__charts {
+        gap: 2rem
+    }
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__charts .CopyTradingPage-module-scss-module__IUkHUG__chartContainer {
+    background: #ffffff0d;
+    border: 1px solid #ffffff1a;
+    border-radius: 8px;
+    padding: .75rem;
+    transition: all .3s
+}
+
+@media (min-width:640px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__charts .CopyTradingPage-module-scss-module__IUkHUG__chartContainer {
+        padding: 1rem
+    }
+}
+
+@media (min-width:1024px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__charts .CopyTradingPage-module-scss-module__IUkHUG__chartContainer {
+        padding: 1.2rem
+    }
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__charts .CopyTradingPage-module-scss-module__IUkHUG__chartContainer:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px #00000026
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__light .CopyTradingPage-module-scss-module__IUkHUG__charts .CopyTradingPage-module-scss-module__IUkHUG__chartContainer {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px #0000001a
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__charts .CopyTradingPage-module-scss-module__IUkHUG__chartContainer h3 {
+    color: #64748b;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__analysisSection {
+    flex-direction: column;
+    gap: 2rem;
+    display: flex
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__digitAnalysis h3 {
+    color: #64748b;
+    align-items: center;
+    gap: .5rem;
+    margin: 0 0 .75rem;
+    font-size: .9rem;
+    font-weight: 600;
+    display: flex
+}
+
+@media (min-width:640px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__digitAnalysis h3 {
+        margin-bottom: 1rem;
+        font-size: 1rem
+    }
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__digitAnalysis h3 svg {
+    width: 16px;
+    height: 16px
+}
+
+@media (min-width:640px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__digitAnalysis h3 svg {
+        width: 18px;
+        height: 18px
+    }
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__digitCircles {
+    perspective: 1000px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: .15rem;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: .15rem;
+    display: grid
+}
+
+@media (min-width:375px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__digitCircles {
+        gap: .35rem;
+        padding: .5rem
+    }
+}
+
+@media (min-width:640px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__digitCircles {
+        gap: .5rem;
+        max-width: 400px;
+        padding: .75rem
+    }
+}
+
+@media (min-width:768px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__digitCircles {
+        gap: .75rem;
+        max-width: 500px;
+        padding: 1rem
+    }
+}
+
+@media (max-width:640px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__digitCircles {
+        grid-template-columns: repeat(5, 1fr);
+        gap: .6rem;
+        padding: .5rem
+    }
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__digitCircle {
+    aspect-ratio: 1;
+    width: 100%;
+    max-width: 70px;
+    height: auto;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    background: #ffffff1a;
+    border: 3px solid #fff3;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    transition: all .4s cubic-bezier(.34, 1.56, .64, 1);
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 30px #00000026
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__digitCircle:before {
+    content: "";
+    z-index: 1;
+    opacity: 0;
+    background: linear-gradient(135deg, #ffffff1a, #fff6);
+    border-radius: 50%;
+    transition: opacity .3s;
+    position: absolute;
+    inset: 0
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__digitCircle:hover {
+    transform: translateY(-5px)scale(1.05);
+    box-shadow: 0 8px 25px #00000026
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__digitCircle:hover:before {
+    opacity: 1
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__digitCircle:hover .CopyTradingPage-module-scss-module__IUkHUG__digitNumber {
+    transform: scale(1.1)
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__dark .CopyTradingPage-module-scss-module__IUkHUG__digitCircle {
+    background: linear-gradient(145deg, #1e293b, #0f172a);
+    box-shadow: 0 4px 15px #0000004d
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__dark .CopyTradingPage-module-scss-module__IUkHUG__digitCircle:before {
+    background: linear-gradient(135deg, #ffffff0d, #ffffff1a)
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__digitCircle.CopyTradingPage-module-scss-module__IUkHUG__overDigit {
+    color: #10b981;
+    background: #10b98126;
+    border-color: #10b9814d
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__digitCircle.CopyTradingPage-module-scss-module__IUkHUG__overDigit .CopyTradingPage-module-scss-module__IUkHUG__digitNumber {
+    color: #fff;
+    text-shadow: 0 1px 2px #0003
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__digitCircle.CopyTradingPage-module-scss-module__IUkHUG__overDigit .CopyTradingPage-module-scss-module__IUkHUG__digitPercentage,
+.CopyTradingPage-module-scss-module__IUkHUG__digitCircle.CopyTradingPage-module-scss-module__IUkHUG__overDigit .CopyTradingPage-module-scss-module__IUkHUG__digitCount {
+    color: #ffffffe6
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__digitCircle.CopyTradingPage-module-scss-module__IUkHUG__overDigit:hover {
+    transform: translateY(-3px)scale(1.02);
+    box-shadow: 0 8px 30px #10b9814d
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__digitCircle.CopyTradingPage-module-scss-module__IUkHUG__underDigit {
+    color: #ef4444;
+    background: #ef444426;
+    border-color: #ef44444d
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__digitCircle.CopyTradingPage-module-scss-module__IUkHUG__underDigit .CopyTradingPage-module-scss-module__IUkHUG__digitNumber {
+    color: #fff;
+    text-shadow: 0 1px 2px #0003
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__digitCircle.CopyTradingPage-module-scss-module__IUkHUG__underDigit .CopyTradingPage-module-scss-module__IUkHUG__digitPercentage,
+.CopyTradingPage-module-scss-module__IUkHUG__digitCircle.CopyTradingPage-module-scss-module__IUkHUG__underDigit .CopyTradingPage-module-scss-module__IUkHUG__digitCount {
+    color: #ffffffe6
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__digitCircle.CopyTradingPage-module-scss-module__IUkHUG__underDigit:hover {
+    transform: translateY(-3px)scale(1.02);
+    box-shadow: 0 8px 30px #ef44444d
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__digitCircle.CopyTradingPage-module-scss-module__IUkHUG__thresholdDigit {
+    color: #f59e0b;
+    background: #f59e0b26;
+    border-color: #f59e0b4d
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__digitCircle.CopyTradingPage-module-scss-module__IUkHUG__thresholdDigit .CopyTradingPage-module-scss-module__IUkHUG__digitNumber {
+    color: #fff;
+    text-shadow: 0 1px 2px #0003
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__digitCircle.CopyTradingPage-module-scss-module__IUkHUG__thresholdDigit .CopyTradingPage-module-scss-module__IUkHUG__digitPercentage,
+.CopyTradingPage-module-scss-module__IUkHUG__digitCircle.CopyTradingPage-module-scss-module__IUkHUG__thresholdDigit .CopyTradingPage-module-scss-module__IUkHUG__digitCount {
+    color: #ffffffe6
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__digitCircle.CopyTradingPage-module-scss-module__IUkHUG__thresholdDigit:hover {
+    transform: translateY(-3px)scale(1.02);
+    box-shadow: 0 8px 30px #f59e0b4d
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__digitCircle.CopyTradingPage-module-scss-module__IUkHUG__activeDigit {
+    z-index: 2;
+    animation: 2s infinite alternate CopyTradingPage-module-scss-module__IUkHUG__pulseGlow, 3s ease-in-out infinite CopyTradingPage-module-scss-module__IUkHUG__float;
+    position: relative
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__digitCircle.CopyTradingPage-module-scss-module__IUkHUG__activeDigit:after {
+    content: "";
+    z-index: -1;
+    filter: blur(2px);
+    opacity: .8;
+    background: linear-gradient(45deg, #ef4444, #f97316, #eab308, #84cc16, #10b981, #3b82f6, #8b5cf6, #ec4899, #ef4444) 0 0/400% 400%;
+    border-radius: 50%;
+    animation: 4s infinite CopyTradingPage-module-scss-module__IUkHUG__borderGradient, 4s infinite CopyTradingPage-module-scss-module__IUkHUG__pulse;
+    position: absolute;
+    inset: -2px
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__digitCircle.CopyTradingPage-module-scss-module__IUkHUG__activeDigit .CopyTradingPage-module-scss-module__IUkHUG__digitNumber {
+    animation: .5s infinite alternate CopyTradingPage-module-scss-module__IUkHUG__bounce
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__digitCircle:hover {
+    transform: scale(1.05)
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__liquidFill {
+    width: 100%;
+    height: calc(var(--fill-percentage, 0%) + 5%);
+    background: var(--liquid-color, #3b82f6b3);
+    z-index: 1;
+    border-radius: 50% 50% 0 0;
+    transition: height 1.5s cubic-bezier(.4, 0, .2, 1);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    transform: translateZ(0)
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__liquidFill:before {
+    content: "";
+    background: #fff6;
+    border-radius: 50%;
+    width: 100%;
+    height: 20px;
+    animation: 3s infinite CopyTradingPage-module-scss-module__IUkHUG__liquidShine;
+    position: absolute;
+    top: -10px;
+    left: 0
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__liquidFill .CopyTradingPage-module-scss-module__IUkHUG__liquidWave {
+    transform-origin: 50%;
+    background: #fff3;
+    border-radius: 40%;
+    width: 200%;
+    height: 200%;
+    animation: 8s linear infinite CopyTradingPage-module-scss-module__IUkHUG__wave;
+    position: absolute;
+    top: -15px;
+    left: 0
+}
+
+@keyframes CopyTradingPage-module-scss-module__IUkHUG__liquidShine {
+    0%,
+    to {
+        opacity: .6;
+        transform: translateY(0)scale(1)
+    }
+    50% {
+        opacity: .9;
+        transform: translateY(-5px)scale(1.02)
+    }
+}
+
+@keyframes CopyTradingPage-module-scss-module__IUkHUG__wave {
+    0% {
+        transform: rotate(0)
+    }
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__digitInner {
+    z-index: 2;
+    text-shadow: 0 1px 2px #0003;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .1rem;
+    width: 100%;
+    height: 100%;
+    padding: .5rem;
+    transition: all .3s;
+    display: flex;
+    position: relative
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__digitNumber {
+    color: #fff;
+    text-shadow: 0 1px 3px #0000004d;
+    z-index: 2;
+    font-size: .9rem;
+    font-weight: 700;
+    transition: all .3s;
+    position: relative
+}
+
+@media (min-width:375px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__digitNumber {
+        font-size: 1rem
+    }
+}
+
+@media (min-width:640px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__digitNumber {
+        font-size: 1.1rem
+    }
+}
+
+@media (min-width:768px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__digitNumber {
+        font-size: 1.2rem
+    }
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__dark .CopyTradingPage-module-scss-module__IUkHUG__digitNumber {
+    color: #fff
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__digitPercentage {
+    color: #fff;
+    white-space: nowrap;
+    opacity: .95;
+    z-index: 2;
+    text-shadow: 0 1px 2px #0003;
+    font-size: .6rem;
+    font-weight: 700;
+    transition: all .3s;
+    position: relative
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__dark .CopyTradingPage-module-scss-module__IUkHUG__digitPercentage {
+    color: #fff
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__digitCount {
+    color: #ffffffe6;
+    white-space: nowrap;
+    opacity: .85;
+    z-index: 2;
+    text-shadow: 0 1px 2px #0003;
+    font-size: .5rem;
+    font-weight: 500;
+    transition: all .3s;
+    position: relative
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__dark .CopyTradingPage-module-scss-module__IUkHUG__digitCount {
+    color: #ffffffe6
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__evenOddAnalysis {
+    background: #ffffff0d;
+    border: 1px solid #ffffff1a;
+    border-radius: 12px;
+    margin-top: 2rem;
+    padding: 1.5rem
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__evenOddAnalysis h3 {
+    color: #64748b;
+    align-items: center;
+    gap: .5rem;
+    margin: 0 0 1.5rem;
+    font-size: 1.1rem;
+    display: flex
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__light .CopyTradingPage-module-scss-module__IUkHUG__evenOddAnalysis {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px #0000001a
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__evenOddContainer {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    display: grid
+}
+
+@media (min-width:768px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__evenOddContainer {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__evenOddCard {
+    background: #ffffff0d;
+    border: 1px solid #ffffff1a;
+    border-radius: 10px;
+    padding: 1.25rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__evenOddCard:before {
+    content: "";
+    opacity: 0;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    height: 4px;
+    transition: opacity .3s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__evenOddCard.CopyTradingPage-module-scss-module__IUkHUG__even:before {
+    background: linear-gradient(90deg, #10b981, #3b82f6)
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__evenOddCard.CopyTradingPage-module-scss-module__IUkHUG__odd:before {
+    background: linear-gradient(90deg, #f59e0b, #ec4899)
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__evenOddCard.CopyTradingPage-module-scss-module__IUkHUG__current {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px #00000026
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__evenOddCard.CopyTradingPage-module-scss-module__IUkHUG__current:before {
+    opacity: 1
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__light .CopyTradingPage-module-scss-module__IUkHUG__evenOddCard {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 4px #0000000d
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__evenOddHeader {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    display: flex
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__evenOddHeader h4 {
+    color: #64748b;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__evenOddPercentage {
+    color: #3b82f6;
+    font-size: 1.1rem;
+    font-weight: 700
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__evenOddPercentage span {
+    opacity: .8;
+    font-size: .85rem;
+    font-weight: 500
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__even .CopyTradingPage-module-scss-module__IUkHUG__evenOddPercentage {
+    color: #10b981
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__odd .CopyTradingPage-module-scss-module__IUkHUG__evenOddPercentage {
+    color: #ec4899
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__evenOddBar {
+    background: #0000001a;
+    border-radius: 5px;
+    height: 10px;
+    margin: 1rem 0;
+    overflow: hidden
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__light .CopyTradingPage-module-scss-module__IUkHUG__evenOddBar {
+    background: #f1f5f9
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__evenOddFill {
+    border-radius: 5px;
+    height: 100%;
+    transition: width 1s ease-in-out;
+    position: relative
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__evenOddFill:after {
+    content: "";
+    background: linear-gradient(90deg, #0000, #fff6, #0000);
+    animation: 2s infinite CopyTradingPage-module-scss-module__IUkHUG__shine;
+    position: absolute;
+    inset: 0
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__evenOddFill.CopyTradingPage-module-scss-module__IUkHUG__evenFill {
+    background: linear-gradient(90deg, #10b981, #3b82f6)
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__evenOddFill.CopyTradingPage-module-scss-module__IUkHUG__oddFill {
+    background: linear-gradient(90deg, #f59e0b, #ec4899)
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__evenOddDigits {
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin-top: .75rem;
+    display: flex
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__evenOddDigit {
+    color: #64748b;
+    background: #0000001a;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    font-size: .85rem;
+    font-weight: 600;
+    transition: all .3s;
+    display: flex
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__evenOddDigit.CopyTradingPage-module-scss-module__IUkHUG__activeDigit {
+    color: #fff;
+    background: #3b82f6;
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px #3b82f64d
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__light .CopyTradingPage-module-scss-module__IUkHUG__evenOddDigit {
+    color: #475569;
+    background: #f1f5f9
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__light .CopyTradingPage-module-scss-module__IUkHUG__evenOddDigit.CopyTradingPage-module-scss-module__IUkHUG__activeDigit {
+    color: #fff;
+    background: #3b82f6
+}
+
+@keyframes CopyTradingPage-module-scss-module__IUkHUG__shine {
+    0% {
+        transform: translate(-100%)
+    }
+    to {
+        transform: translate(100%)
+    }
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__overUnderAnalysis h3 {
+    color: #64748b;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__numberSelector {
+    margin-bottom: 1.5rem
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__numberSelector .CopyTradingPage-module-scss-module__IUkHUG__selectorLabel {
+    color: #64748b;
+    margin-bottom: .75rem;
+    font-size: .9rem;
+    font-weight: 500;
+    display: block
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__numberGrid {
+    grid-template-columns: repeat(10, 1fr);
+    gap: .4rem;
+    display: grid
+}
+
+@media (max-width:768px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__numberGrid {
+        grid-template-columns: repeat(5, 1fr)
+    }
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__numBtn {
+    color: #64748b;
+    cursor: pointer;
+    background: #fff;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    padding: .6rem;
+    font-size: .9rem;
+    font-weight: 600;
+    transition: all .3s
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__dark .CopyTradingPage-module-scss-module__IUkHUG__numBtn {
+    color: #cbd5e1;
+    background: #ffffff0d;
+    border-color: #ffffff1a
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__numBtn:hover {
+    border-color: #3b82f6;
+    transform: translateY(-2px)
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__numBtn.CopyTradingPage-module-scss-module__IUkHUG__selected {
+    color: #fff;
+    background: #3b82f6;
+    border-color: #3b82f6;
+    transform: scale(1.05)
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__numBtn.CopyTradingPage-module-scss-module__IUkHUG__overDigit {
+    color: #10b981;
+    border-color: #10b981
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__numBtn.CopyTradingPage-module-scss-module__IUkHUG__underDigit {
+    color: #ef4444;
+    border-color: #ef4444
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__progressAnalysis {
+    grid-template-columns: 1fr;
+    gap: .75rem;
+    margin-bottom: 1rem;
+    display: grid
+}
+
+@media (min-width:640px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__progressAnalysis {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem
+    }
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__progressCard {
+    background: #ffffff0d;
+    border: 1px solid #ffffff1a;
+    border-radius: 10px;
+    padding: 1.2rem;
+    transition: all .3s
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__progressCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px #00000026
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__light .CopyTradingPage-module-scss-module__IUkHUG__progressCard {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px #0000001a
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__progressHeader {
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 1rem;
+    font-size: .9rem;
+    font-weight: 600;
+    display: flex
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__progressHeader .CopyTradingPage-module-scss-module__IUkHUG__percentageValue {
+    margin-left: auto;
+    font-size: 1.1rem;
+    font-weight: 700
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__progressBar {
+    background: #ffffff1a;
+    border-radius: 16px;
+    width: 100%;
+    height: 32px;
+    position: relative;
+    overflow: hidden
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__light .CopyTradingPage-module-scss-module__IUkHUG__progressBar {
+    background: #f1f5f9
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__progressFillOver {
+    background: linear-gradient(90deg, #10b981, #34d399);
+    border-radius: 16px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transition: width .5s;
+    display: flex;
+    position: relative
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__progressFillUnder {
+    background: linear-gradient(90deg, #ef4444, #f87171);
+    border-radius: 16px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transition: width .5s;
+    display: flex;
+    position: relative
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__progressText {
+    color: #fff;
+    text-shadow: 1px 1px 2px #0000004d;
+    font-size: .8rem;
+    font-weight: 600
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__countInfo {
+    color: #94a3b8;
+    text-align: center;
+    margin-top: .5rem;
+    font-size: .8rem
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__summaryStats {
+    background: #ffffff0d;
+    border: 1px solid #ffffff1a;
+    border-radius: 6px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .5rem;
+    padding: .5rem;
+    font-size: .8em;
+    display: grid
+}
+
+@media (min-width:375px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__summaryStats {
+        padding: .75rem;
+        font-size: .85em
+    }
+}
+
+@media (min-width:640px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__summaryStats {
+        font-size: .9em
+    }
+}
+
+@media (min-width:480px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__summaryStats {
+        gap: .75rem;
+        padding: 1rem
+    }
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__light .CopyTradingPage-module-scss-module__IUkHUG__summaryStats {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px #0000001a
+}
+
+@media (max-width:640px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__summaryStats {
+        grid-template-columns: 1fr
+    }
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__statItem {
+    background: #ffffff0d;
+    border-radius: 8px;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    padding: .8rem;
+    display: flex
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__light .CopyTradingPage-module-scss-module__IUkHUG__statItem {
+    background: #f8fafc
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__statLabel {
+    color: #64748b;
+    font-size: .7rem;
+    font-weight: 500
+}
+
+@media (min-width:375px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__statLabel {
+        font-size: .75rem
+    }
+}
+
+@media (min-width:640px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__statLabel {
+        font-size: .8rem
+    }
+}
+
+.CopyTradingPage-module-scss-module__IUkHUG__statValue {
+    color: #3b82f6;
+    font-size: .9rem;
+    font-weight: 700
+}
+
+@media (min-width:375px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__statValue {
+        font-size: 1rem
+    }
+}
+
+@media (min-width:640px) {
+    .CopyTradingPage-module-scss-module__IUkHUG__statValue {
+        font-size: 1.1rem
+    }
+}
+
+@keyframes CopyTradingPage-module-scss-module__IUkHUG__pulseGlow {
+    0% {
+        box-shadow: 0 0 5px #ef44444d
+    }
+    to {
+        box-shadow: 0 0 20px 5px #ef444499
+    }
+}
+
+@keyframes CopyTradingPage-module-scss-module__IUkHUG__float {
+    0%,
+    to {
+        transform: translateY(0)
+    }
+    50% {
+        transform: translateY(-5px)
+    }
+}
+
+@keyframes CopyTradingPage-module-scss-module__IUkHUG__borderGradient {
+    0% {
+        background-position: 0%
+    }
+    50% {
+        background-position: 100%
+    }
+    to {
+        background-position: 0%
+    }
+}
+
+@keyframes CopyTradingPage-module-scss-module__IUkHUG__bounce {
+    0% {
+        transform: translateY(0)
+    }
+    to {
+        transform: translateY(-3px)
+    }
+}
+
+@keyframes CopyTradingPage-module-scss-module__IUkHUG__pulse {
+    0%,
+    to {
+        border-width: 4px;
+        transform: scale(1.1)
+    }
+    25% {
+        border-width: 5px;
+        transform: scale(1.15)
+    }
+    50% {
+        border-width: 4px;
+        transform: scale(1.1)
+    }
+    75% {
+        border-width: 5px;
+        transform: scale(1.15)
+    }
+}

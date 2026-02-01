@@ -1,0 +1,1 @@
+webpack-internal:///src/Assets/SvgComponents/trade_explanations/img-high-to-close.svg

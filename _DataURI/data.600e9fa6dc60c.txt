@@ -1,0 +1,1 @@
+chrome-extension://kbfnbcaeplbcioakkpcpgfkobkghlhen/src/js/g2-pushed-content-service.common.chunk.js

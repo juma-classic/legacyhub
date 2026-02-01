@@ -1,0 +1,1 @@
+webpack-internal:///trader/dist/trader/js/trader.js

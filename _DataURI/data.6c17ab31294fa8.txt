@@ -1,0 +1,1 @@
+webpack-internal:///modules/cashier-onboarding/components/cashier-onboarding-card/cashier-onboarding-card.scss

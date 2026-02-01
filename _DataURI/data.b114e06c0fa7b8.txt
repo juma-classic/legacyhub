@@ -1,0 +1,1 @@
+webpack-internal:///components/email-verification-empty-state/email-verification-resend-empty-state.tsx

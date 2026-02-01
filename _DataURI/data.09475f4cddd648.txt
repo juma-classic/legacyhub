@@ -1,0 +1,1 @@
+webpack-internal:///components/transfer-confirm/transfer-confirm.scss

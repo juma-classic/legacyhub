@@ -1,0 +1,1 @@
+webpack-internal:///pages/withdrawal/withdrawal-crypto-receipt/withdrawal-crypto-receipt.tsx

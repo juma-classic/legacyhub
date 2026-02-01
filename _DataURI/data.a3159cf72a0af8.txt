@@ -1,0 +1,1 @@
+webpack-internal:///App/Containers/Modals/wallets-upgrade-completed-modal/index.ts

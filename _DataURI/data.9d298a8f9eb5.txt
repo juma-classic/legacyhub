@@ -1,0 +1,1 @@
+webpack-internal:///node_modules/@deriv-com/quill-ui/dist/assets/dropdown-chip-single-select.css

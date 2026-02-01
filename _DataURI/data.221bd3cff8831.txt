@@ -1,0 +1,1 @@
+webpack-internal:///src/App/Components/Elements/PositionsDrawer/positions-result-mobile.tsx

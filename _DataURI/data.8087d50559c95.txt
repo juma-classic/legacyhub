@@ -1,0 +1,1 @@
+webpack-internal:///node_modules/@deriv-com/ui/dist/components/Modal/CloseIcon.js

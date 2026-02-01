@@ -1,0 +1,1 @@
+webpack-internal:///App/Containers/AccountSwitcherWallet/account-switcher-wallet-mobile.tsx

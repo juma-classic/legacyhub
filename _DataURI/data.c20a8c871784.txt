@@ -1,0 +1,1 @@
+webpack-internal:///src/utils/help-content/help-strings/ohlc_values.ts

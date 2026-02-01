@@ -1,0 +1,1 @@
+webpack-internal:///node_modules/react-swipeable/dist/react-swipeable.umd.js

@@ -1,0 +1,1 @@
+webpack-internal:///components/switch-to-fiat-account-dialog/switch-to-fiat-account-dialog.tsx

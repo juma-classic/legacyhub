@@ -1,0 +1,1 @@
+webpack-internal:///Configs/currency-selector-config.ts

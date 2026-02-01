@@ -1,0 +1,1 @@
+webpack-internal:///node_modules/@deriv-com/translations/dist/provider/translation-provider.js

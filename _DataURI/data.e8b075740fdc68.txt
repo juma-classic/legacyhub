@@ -1,0 +1,1 @@
+chrome-extension://kbfnbcaeplbcioakkpcpgfkobkghlhen/src/js/3244.vendors.chunk.js

@@ -1,0 +1,1 @@
+chrome-extension://kbfnbcaeplbcioakkpcpgfkobkghlhen/src/fonts/cb793ad7afd4e3a8/inter_Inter-Bold.woff

@@ -1,0 +1,1 @@
+webpack-internal:///modules/cashier-onboarding/components/cashier-onboarding-fiat-card/cashier-onboarding-fiat-card.tsx

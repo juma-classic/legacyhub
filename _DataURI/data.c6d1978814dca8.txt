@@ -1,0 +1,1 @@
+chrome-extension://kbfnbcaeplbcioakkpcpgfkobkghlhen/src/fonts/f86c32ba0f42a842/inter_Inter-SemiBold.woff

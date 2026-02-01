@@ -1,0 +1,1 @@
+webpack-internal:///node_modules/@cloudflare/stream-react/dist/stream-react.esm.js

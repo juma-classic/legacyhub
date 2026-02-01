@@ -1,0 +1,1 @@
+webpack-internal:///bot-web-ui/dist/bot/js/bot-web-ui.main.js

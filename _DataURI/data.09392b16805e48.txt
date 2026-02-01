@@ -1,0 +1,1 @@
+webpack-internal:///modules/transactions-crypto/components/transactions-crypto-transaction-status-side-note/transactions-crypto-transaction-status-side-note.tsx

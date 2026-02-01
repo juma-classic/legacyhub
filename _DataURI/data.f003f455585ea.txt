@@ -1,0 +1,1 @@
+webpack-internal:///src/Stores/Modules/Trading/Helpers/proposal.ts

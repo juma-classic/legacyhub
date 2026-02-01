@@ -1,0 +1,1 @@
+webpack-internal:///components/account-platform-icon/account-platform-icon.tsx

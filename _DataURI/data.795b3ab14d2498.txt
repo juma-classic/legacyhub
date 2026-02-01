@@ -1,0 +1,1 @@
+webpack-internal:///node_modules/react-lifecycles-compat/react-lifecycles-compat.es.js

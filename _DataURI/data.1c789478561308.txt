@@ -1,0 +1,1 @@
+webpack-internal:///src/Modules/SmartChart/Components/top-widgets.tsx

@@ -1,0 +1,1 @@
+webpack-internal:///src/components/trading-view-chart/trading-view-modal.tsx

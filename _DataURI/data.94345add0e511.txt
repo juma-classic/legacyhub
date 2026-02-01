@@ -1,0 +1,1 @@
+webpack-internal:///src/pages/bot-builder/quick-strategy/form-wrappers/strategy-tab-content.tsx

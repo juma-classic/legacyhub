@@ -1,0 +1,1 @@
+webpack-internal:///node_modules/@rudderstack/analytics-js/dist/npm/modern/cjs/index.cjs
