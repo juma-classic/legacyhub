@@ -244,12 +244,26 @@ class ChartSimulator {
     }
 }
 
-// Initialize chart when DOM is ready
+// Initialize chart when DOM is ready and force multiple attempts
+function initializeChart() {
+    const chartContainer = document.getElementById('trading-chart-canvas');
+    if (chartContainer && !window.chartSimulator) {
+        console.log('Initializing chart simulator...');
+        window.chartSimulator = new ChartSimulator('trading-chart-canvas');
+    }
+}
+
+// Multiple initialization attempts
 document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-        const chartContainer = document.getElementById('trading-chart-canvas');
-        if (chartContainer) {
-            new ChartSimulator('trading-chart-canvas');
-        }
-    }, 2000);
+    setTimeout(initializeChart, 1000);
+    setTimeout(initializeChart, 2000);
+    setTimeout(initializeChart, 3000);
+    setTimeout(initializeChart, 5000);
 });
+
+// Also try immediately if DOM is already ready
+if (document.readyState !== 'loading') {
+    setTimeout(initializeChart, 1000);
+    setTimeout(initializeChart, 2000);
+    setTimeout(initializeChart, 3000);
+}
