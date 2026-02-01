@@ -2,14 +2,148 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>NILOTEGRAM - Redirecting...</title>
-    <script>
-        // Redirect to the main application
-        window.location.href = '/dtrader.html';
-    </script>
+    <title>LEGACY HUB - Advanced Trading Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+        
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        
+        .tagline {
+            color: #666;
+            margin-bottom: 32px;
+            font-size: 16px;
+        }
+        
+        .btn {
+            background: #ff6444;
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 8px;
+        }
+        
+        .btn:hover {
+            background: #e55a3d;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255,100,68,0.3);
+        }
+        
+        .features {
+            margin-top: 32px;
+            text-align: left;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            color: #555;
+        }
+        
+        .loading {
+            display: none;
+            margin-top: 20px;
+        }
+        
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #ff6444;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
-    <p>Redirecting to NILOTEGRAM...</p>
-    <p>If you're not redirected automatically, <a href="/dtrader.html">click here</a>.</p>
+    <div class="container">
+        <div class="logo">
+            🏛️ LEGACY HUB
+        </div>
+        <div class="tagline">
+            Advanced Trading Platform
+        </div>
+        
+        <a href="/dtrader.html" class="btn" onclick="showLoading()">
+            Launch Trading Platform
+        </a>
+        
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p style="margin-top: 12px; color: #666;">Loading platform...</p>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <span>📈</span>
+                <span>Real-time market data</span>
+            </div>
+            <div class="feature">
+                <span>🔢</span>
+                <span>Multiple trading instruments</span>
+            </div>
+            <div class="feature">
+                <span>⚡</span>
+                <span>Fast execution</span>
+            </div>
+            <div class="feature">
+                <span>🛡️</span>
+                <span>Risk management tools</span>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showLoading() {
+            document.getElementById('loading').style.display = 'block';
+        }
+    </script>
 </body>
 </html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Test</title>
+    <link href="/css/core.mainA.ae64cc5b6e3aca8621b8.main.css" rel="stylesheet">
+    <link href="/css/core.maini.f276741823e72ed3d622.main.css" rel="stylesheet">
+    <style>
+        body { margin: 0; padding: 20px; font-family: Arial, sans-serif; }
+        .test-container { max-width: 800px; margin: 0 auto; }
+        .test-section { margin: 20px 0; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        .hamburger-test {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background: #f9f9f9;
+            cursor: pointer;
+        }
+        .header__mobile-drawer-toggle {
+            padding: 0 1.2rem;
+            display: flex;
+            align-items: center;
+            border-right: 1px solid #f2f3f4;
+            cursor: pointer;
+        }
+        .header__mobile-drawer-icon {
+            width: 16px;
+            height: 16px;
+        }
+        /* Simple hamburger icon using CSS */
+        .hamburger-icon {
+            width: 16px;
+            height: 16px;
+            position: relative;
+            cursor: pointer;
+        }
+        .hamburger-icon::before,
+        .hamburger-icon::after,
+        .hamburger-icon {
+            background: #333;
+        }
+        .hamburger-icon::before,
+        .hamburger-icon::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 2px;
+            left: 0;
+        }
+        .hamburger-icon::before {
+            top: 2px;
+        }
+        .hamburger-icon {
+            height: 2px;
+            top: 7px;
+        }
+        .hamburger-icon::after {
+            top: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Navigation Menu Test</h1>
+        
+        <div class="test-section">
+            <h2>1. CSS Classes Test</h2>
+            <p>Testing if the hamburger menu CSS classes are loaded:</p>
+            <div class="hamburger-test">
+                <div class="header__mobile-drawer-toggle">
+                    <div class="header__mobile-drawer-icon hamburger-icon"></div>
+                    <span style="margin-left: 10px;">Hamburger Menu (CSS only)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>2. React App Mount Point</h2>
+            <p>The React app should mount here:</p>
+            <div id="deriv_app" style="border: 2px dashed #ff6444; padding: 20px; min-height: 100px;">
+                <div class="initial-loader">
+                    <p>Loading React app...</p>
+                    <div class="initial-loader__barspinner barspinner barspinner-light">
+                        <div class="initial-loader__barspinner--rect barspinner__rect barspinner__rect--1 rect1"></div>
+                        <div class="initial-loader__barspinner--rect barspinner__rect barspinner__rect--2 rect2"></div>
+                        <div class="initial-loader__barspinner--rect barspinner__rect barspinner__rect--3 rect3"></div>
+                        <div class="initial-loader__barspinner--rect barspinner__rect barspinner__rect--4 rect4"></div>
+                        <div class="initial-loader__barspinner--rect barspinner__rect barspinner__rect--5 rect5"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>3. JavaScript Loading Test</h2>
+            <p>Check browser console for JavaScript errors.</p>
+            <button onclick="testJS()">Test JavaScript</button>
+            <div id="js-test-result"></div>
+        </div>
+    </div>
+
+    <!-- Load the same JavaScript files as the main app -->
+    <script defer src="/js/core.vendors-node_modules_cloudflare_stream-react_dist_stream-react_esm_js-node_modules_datadog_br-885940.3205459dd5a63bdcc723.js"></script>
+    <script defer src="/js/core.vendors-node_modules_file-selector_dist_es5_index_js-node_modules_formik_dist_formik_esm_js-n-ed3846.8e5bb9903de76e09753a.js"></script>
+    <script defer src="/js/core.vendors-node_modules_growthbook_growthbook_dist_cjs_index_js-node_modules_has-property-descri-b0df33.e87aa01d254517a5b651.js"></script>
+    <script defer src="/js/core.vendors-node_modules_moment_moment_js-node_modules_object-keys_index_js-node_modules_object_f-622573.8ba83ef52f1ef700ded3.js"></script>
+    <script defer src="/js/core.vendors-node_modules_ua-parser-js_src_ua-parser_js-node_modules_use-sync-external-store_shim_-e00087.ffac65feba5e964df224.js"></script>
+    <script defer src="/js/core.mainA.8ead4a2f25ef515b7ee1.js"></script>
+    <script defer src="/js/core.maini.4afc9a734f82b2388c13.js"></script>
+
+    <script>
+        function testJS() {
+            const result = document.getElementById('js-test-result');
+            result.innerHTML = '<p>Testing JavaScript...</p>';
+            
+            // Test if React is loaded
+            if (typeof React !== 'undefined') {
+                result.innerHTML += '<p>✅ React is loaded</p>';
+            } else {
+                result.innerHTML += '<p>❌ React is not loaded</p>';
+            }
+            
+            // Test if the deriv_app element exists
+            const derivApp = document.getElementById('deriv_app');
+            if (derivApp) {
+                result.innerHTML += '<p>✅ deriv_app element found</p>';
+            } else {
+                result.innerHTML += '<p>❌ deriv_app element not found</p>';
+            }
+            
+            // Test if hamburger toggle element exists
+            const hamburgerToggle = document.getElementById('dt_mobile_drawer_toggle');
+            if (hamburgerToggle) {
+                result.innerHTML += '<p>✅ Hamburger toggle element found</p>';
+            } else {
+                result.innerHTML += '<p>❌ Hamburger toggle element not found (React app not mounted)</p>';
+            }
+        }
+        
+        // Auto-run test after page loads
+        window.addEventListener('load', function() {
+            setTimeout(testJS, 2000); // Wait 2 seconds for scripts to load
+        });
+    </script>
+</body>
+</html>
